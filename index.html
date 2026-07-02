@@ -235,6 +235,49 @@
     .pain-list{grid-template-columns:1fr}
   }
 
+  /* Finale panel */
+  .finale{position:relative;padding:120px 48px 140px;overflow:hidden;
+    background:linear-gradient(180deg,#0f172a 0%,#1e1a4a 50%,#4f2b8a 100%);
+    color:#fff;text-align:center;border-bottom:none}
+  .finale::before,.finale::after{content:"";position:absolute;pointer-events:none;
+    background-image:
+      radial-gradient(circle,#ffd166 1.5px,transparent 2px),
+      radial-gradient(circle,#ff6b9d 1.5px,transparent 2px),
+      radial-gradient(circle,#6b4eff 1.5px,transparent 2px),
+      radial-gradient(circle,#4ecdc4 1.5px,transparent 2px);
+    background-size:120px 120px,180px 180px,150px 150px,200px 200px;
+    background-position:0 0,60px 30px,30px 90px,90px 60px;
+    opacity:.5}
+  .finale::before{top:0;left:0;right:0;height:200px}
+  .finale::after{bottom:0;left:0;right:0;height:200px}
+  .finale-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+  .finale-kicker{font-size:14px;letter-spacing:.28em;text-transform:uppercase;
+    color:#ffd166;font-weight:800;margin-bottom:32px;
+    text-shadow:0 0 20px rgba(255,209,102,.4)}
+  .finale-title{font-size:76px;font-weight:900;letter-spacing:-.03em;line-height:1;
+    margin:0 0 20px;
+    background:linear-gradient(135deg,#ffd166 0%,#ff6b9d 50%,#a78bff 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent}
+  .finale-sub{font-size:22px;color:#e2d9ff;font-weight:500;margin-bottom:56px;
+    letter-spacing:-.005em}
+  .finale-photo{max-width:640px;width:100%;height:auto;border-radius:24px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 6px rgba(255,209,102,.3),
+      0 0 0 12px rgba(255,107,157,.2),0 0 0 18px rgba(107,78,255,.15);
+    display:block;margin:0 auto}
+  .finale-caption{margin-top:40px;font-size:18px;color:#c4b5fd;
+    font-weight:600;letter-spacing:.02em}
+  .finale-emoji{font-size:32px;margin:0 8px;
+    filter:drop-shadow(0 4px 12px rgba(255,209,102,.4))}
+
+  @media (max-width:640px){
+    .finale{padding:72px 22px 88px}
+    .finale-title{font-size:42px}
+    .finale-sub{font-size:17px;margin-bottom:36px}
+    .finale-photo{border-radius:16px}
+    .finale-kicker{font-size:11px}
+  }
+
   /* Footer */
   footer{padding:56px 48px;text-align:center;color:var(--muted);font-size:14px;
     background:var(--ink);color:#94a3b8}
@@ -836,6 +879,23 @@
           in the company will be between the Department Head and the Executive Assistant.
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section class="finale">
+  <div class="finale-inner">
+    <div class="finale-kicker">The result</div>
+    <h2 class="finale-title">Trevor &amp; Cole<br>Bahamas 2027</h2>
+    <div class="finale-sub">
+      <span class="finale-emoji">🌴</span>
+      Feet up. Phones down. The system runs.
+      <span class="finale-emoji">🥂</span>
+    </div>
+    <img src="img/trevor-and-cole.jpeg" alt="Trevor and Cole on the beach at sunset — Bahamas 2027" class="finale-photo">
+    <div class="finale-caption">
+      Every quick win, every audit, every handoff — this is what it was for.
     </div>
   </div>
 </section>
