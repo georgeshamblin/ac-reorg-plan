@@ -194,28 +194,45 @@
     color:var(--accent);font-weight:700;margin-bottom:14px}
   .two-col p{margin:0;font-size:17px;line-height:1.65;color:var(--ink)}
 
-  /* Paired pain → benefit layout */
-  .pair-row{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;
-    margin:20px 0;align-items:stretch}
-  .pair-row .arrow-col{display:flex;align-items:center;justify-content:center;
-    color:var(--accent);font-size:24px;font-weight:700;padding:0 4px}
-  .pain-card,.benefit-card{background:var(--bg);border:1px solid var(--line);
-    border-radius:14px;padding:28px 30px}
-  .panel:nth-of-type(even) .pain-card,
-  .panel:nth-of-type(even) .benefit-card{background:var(--bg)}
-  .pain-card{border-left:4px solid #cbd5e1}
-  .benefit-card{border-left:4px solid var(--accent)}
-  .pair-k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-    font-weight:700;margin-bottom:12px}
-  .pain-card .pair-k{color:#94a3b8}
-  .benefit-card .pair-k{color:var(--accent)}
-  .pair-title{font-weight:700;color:var(--ink);font-size:18px;margin-bottom:8px;
+  /* Color-coded pain points + solutions */
+  .pain-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0 0}
+  .pain-item{background:var(--bg);border:1px solid var(--line);border-radius:14px;
+    padding:24px 26px 24px 30px;position:relative;overflow:hidden}
+  .pain-item::before{content:"";position:absolute;top:0;left:0;bottom:0;width:6px;
+    background:var(--pc)}
+  .pain-item .tag{display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+    color:var(--pc);margin-bottom:12px}
+  .pain-item .tag .dot{width:10px;height:10px;border-radius:50%;background:var(--pc);
+    display:inline-block}
+  .pain-item .t{font-weight:700;color:var(--ink);font-size:17px;margin-bottom:8px;
     letter-spacing:-.005em;line-height:1.4}
-  .pair-body{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin:0}
+  .pain-item .b{color:var(--ink-soft);font-size:15px;line-height:1.6;margin:0}
+
+  .solution-item{background:var(--bg);border:1px solid var(--line);border-radius:14px;
+    padding:24px 26px 24px 30px;position:relative;overflow:hidden;margin:14px 0}
+  .panel:nth-of-type(even) .solution-item{background:var(--bg)}
+  .solution-item::before{content:"";position:absolute;top:0;left:0;bottom:0;width:6px;
+    background:var(--pc)}
+  .solution-item .sol-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px;
+    flex-wrap:wrap}
+  .solution-item .solves{display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+    color:var(--pc)}
+  .solution-item .solves .dot{width:10px;height:10px;border-radius:50%;background:var(--pc);
+    display:inline-block}
+  .solution-item .t{font-weight:700;color:var(--ink);font-size:19px;
+    letter-spacing:-.005em;line-height:1.4;margin:0}
+  .solution-item .b{color:var(--ink-soft);font-size:16px;line-height:1.65;margin:8px 0 0}
+
+  /* Pain colors — each pain gets its own hue that carries through to solutions */
+  .pain-1{--pc:#e11d48}  /* rose */
+  .pain-2{--pc:#f59e0b}  /* amber */
+  .pain-3{--pc:#0891b2}  /* cyan */
+  .pain-4{--pc:#7c3aed}  /* violet */
 
   @media (max-width:960px){
-    .pair-row{grid-template-columns:1fr;gap:8px}
-    .pair-row .arrow-col{transform:rotate(90deg);padding:4px 0}
+    .pain-list{grid-template-columns:1fr}
   }
 
   /* Footer */
@@ -358,87 +375,90 @@
   </div>
 </section>
 
-<!-- 03 PAIN & BRIDGE -->
+<!-- 03 PAIN POINTS -->
 <section class="panel">
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
         <div class="panel-num">03</div>
-        <h2 class="panel-title">Pain Points &amp; What Departmentalization Solves</h2>
-        <p class="panel-lede">Every pain has a matching benefit. Departmentalization isn't a reorg for its own sake — it's the answer to specific things that are hurting us right now.</p>
+        <h2 class="panel-title">The Pain Points</h2>
+        <p class="panel-lede">Four specific things hurting the company right now. Each one is color-coded and answered by a matching solution in the next section.</p>
       </div>
     </div>
 
-    <div class="two-col" style="margin-bottom:20px">
-      <div>
-        <div class="k">The pain point</div>
-        <p>Trevor and Cole are essential to the company — not just for long-term
-        sustainability, but for day-to-day function. They are load-bearing operationally.</p>
+    <div class="pain-list">
+      <div class="pain-item pain-1">
+        <div class="tag"><span class="dot"></span>Pain 01 · Bottleneck</div>
+        <div class="t">Trevor and Cole are load-bearing operationally.</div>
+        <p class="b">They aren't just essential for long-term strategy — they're essential for day-to-day function. Every client, every decision, every escalation eventually lands on them.</p>
       </div>
-      <div>
-        <div class="k">The bridge</div>
-        <p>Build a system that reduces Trevor and Cole's daily workload and increases
-        responsibility distribution across the rest of the team.</p>
+
+      <div class="pain-item pain-2">
+        <div class="tag"><span class="dot"></span>Pain 02 · Scope Creep</div>
+        <div class="t">Every project balloons.</div>
+        <p class="b">Clients ask for "one more thing" and we do it because we can. Every project becomes every service. Boundaries dissolve. Estimates stop meaning anything.</p>
+      </div>
+
+      <div class="pain-item pain-3">
+        <div class="tag"><span class="dot"></span>Pain 03 · No Fall Guy</div>
+        <div class="t">A failure in one area is a company-wide failure.</div>
+        <p class="b">Every client has so much coverage that responsibility gets diffused. There's no one to blame — which means everything routes back to Cole and Trevor by default.</p>
+      </div>
+
+      <div class="pain-item pain-4">
+        <div class="tag"><span class="dot"></span>Pain 04 · Blitz Coverage</div>
+        <div class="t">Gaps and overcoverage happen at the same time.</div>
+        <p class="b">Three people on one client and zero on another. We're always either drowning or invisible. Staffing follows whoever's free, not what the client actually needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 SOLUTIONS -->
+<section class="panel">
+  <div class="panel-inner">
+    <div class="panel-hdr">
+      <div style="flex:1">
+        <div class="panel-num">04</div>
+        <h2 class="panel-title">The Solutions — Departmentalization</h2>
+        <p class="panel-lede">Each solution is color-matched to the pain it answers. This isn't reorg for its own sake — it's a direct response.</p>
       </div>
     </div>
 
-    <h3 style="margin-top:56px">Pain → Benefit</h3>
-    <p style="margin-bottom:8px">Each pain point on the left is answered by a specific benefit of departmentalization on the right.</p>
-
-    <div class="pair-row">
-      <div class="pain-card">
-        <div class="pair-k">Pain</div>
-        <div class="pair-title">Scope creep — every project balloons</div>
-        <p class="pair-body">Clients ask for "one more thing" and we do it because we can. Every project becomes every service. Boundaries dissolve. Estimates stop meaning anything.</p>
+    <div class="solution-item pain-1">
+      <div class="sol-hdr">
+        <span class="solves"><span class="dot"></span>Solves Pain 01 · Bottleneck</span>
       </div>
-      <div class="arrow-col">→</div>
-      <div class="benefit-card">
-        <div class="pair-k">Benefit</div>
-        <div class="pair-title">Named packages create real edges</div>
-        <p class="pair-body">A client has "Paid Media" and "Social" — that's it. If they want something else, we have to formally bring in another department. The boundary is structural, not a negotiation.</p>
-      </div>
+      <p class="t">Ownership pushes down to Department Heads.</p>
+      <p class="b">Each department has a Head who inherits day-to-day decisions from Cole and Trevor. T&amp;C stop being the default answer to every question. Their calendar reflects it. Their inbox reflects it.</p>
     </div>
 
-    <div class="pair-row">
-      <div class="pain-card">
-        <div class="pair-k">Pain</div>
-        <div class="pair-title">No one to blame when things go wrong</div>
-        <p class="pair-body">Right now a failure in one area is a company-wide failure. Every client has so much coverage that responsibility gets diffused. There's no fall guy. Everything routes back to Cole and Trevor.</p>
+    <div class="solution-item pain-2">
+      <div class="sol-hdr">
+        <span class="solves"><span class="dot"></span>Solves Pain 02 · Scope Creep</span>
       </div>
-      <div class="arrow-col">→</div>
-      <div class="benefit-card">
-        <div class="pair-k">Benefit</div>
-        <div class="pair-title">One POC = one owner</div>
-        <p class="pair-body">A single POC per client means there is exactly one person accountable for that relationship. Wins and losses land on a name. Cole and Trevor aren't the default answer to every problem.</p>
-      </div>
+      <p class="t">Named packages create real edges.</p>
+      <p class="b">A client has "Paid Media" and "Social" — that's it. If they want something else, we have to formally bring in another department. The boundary is structural, not a negotiation. Scope creep stops being invisible.</p>
     </div>
 
-    <div class="pair-row">
-      <div class="pain-card">
-        <div class="pair-k">Pain</div>
-        <div class="pair-title">Gaps and overcoverage happen at the same time</div>
-        <p class="pair-body">The blitz approach means three people on one client and zero on another. We're always either drowning or invisible.</p>
+    <div class="solution-item pain-3">
+      <div class="sol-hdr">
+        <span class="solves"><span class="dot"></span>Solves Pain 03 · No Fall Guy</span>
       </div>
-      <div class="arrow-col">→</div>
-      <div class="benefit-card">
-        <div class="pair-k">Benefit</div>
-        <div class="pair-title">Staffing flows through the Department Head</div>
-        <p class="pair-body">The Head assigns people to clients by department, not by whoever's free. Coverage becomes deliberate. Redundancy gets cut, gaps get filled.</p>
-      </div>
+      <p class="t">One POC = one owner.</p>
+      <p class="b">A single POC per client means exactly one person is accountable for that relationship. Wins and losses land on a name. There is a fall guy — and there's a hero. Cole and Trevor aren't the default for either.</p>
     </div>
 
-    <div class="pair-row">
-      <div class="pain-card">
-        <div class="pair-k">Pain</div>
-        <div class="pair-title">Hiring a new Cole or Trevor is impossible</div>
-        <p class="pair-body">They wear too many hats. Replacing them means replacing four jobs at once. The company can't scale past them.</p>
+    <div class="solution-item pain-4">
+      <div class="sol-hdr">
+        <span class="solves"><span class="dot"></span>Solves Pain 04 · Blitz Coverage</span>
       </div>
-      <div class="arrow-col">→</div>
-      <div class="benefit-card">
-        <div class="pair-k">Benefit</div>
-        <div class="pair-title">Hiring a Head of Content is easy</div>
-        <p class="pair-body">Departmental roles are narrow enough to hire against. When the org has five specific seats, hiring becomes a search problem, not a miracle.</p>
-      </div>
+      <p class="t">Staffing flows through the Department Head.</p>
+      <p class="b">The Head assigns people to clients by department, not by whoever's free that morning. Coverage becomes deliberate. Redundancy gets cut. Gaps get filled. The blitz stops.</p>
+    </div>
+
+    <div class="callout" style="margin-top:36px">
+      <strong>The bridge.</strong> Every solution above collapses into one system: reduce Trevor and Cole's daily workload by distributing responsibility across a structure that can hold it.
     </div>
 
   </div>
@@ -449,7 +469,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">04</div>
+        <div class="panel-num">05</div>
         <h2 class="panel-title">Assumptions</h2>
         <p class="panel-lede">The premises this plan is built on.</p>
       </div>
@@ -472,7 +492,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">05</div>
+        <div class="panel-num">06</div>
         <h2 class="panel-title">Lowest Hanging Fruit</h2>
         <p class="panel-lede">Changes that are cheap to make and immediately relieve the load.</p>
       </div>
@@ -493,7 +513,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">06</div>
+        <div class="panel-num">07</div>
         <h2 class="panel-title">The Precursor — Scaffolding</h2>
         <p class="panel-lede">
           Before anything else, we buy Trevor and Cole time to actually oversee this initiative
@@ -532,7 +552,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">07</div>
+        <div class="panel-num">08</div>
         <h2 class="panel-title">Stage One — The Three Audits</h2>
         <p class="panel-lede">The real work. What → Who → Where.</p>
       </div>
@@ -591,7 +611,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">08</div>
+        <div class="panel-num">09</div>
         <h2 class="panel-title">Structure: Where We Are → Where We're Going</h2>
         <p class="panel-lede">Three diagrams. The current mess, the current burden made explicit, and the target end state.</p>
       </div>
@@ -649,7 +669,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">09</div>
+        <div class="panel-num">10</div>
         <h2 class="panel-title">The Client Lifecycle: Handoffs Over Time</h2>
         <p class="panel-lede">The system in motion. What each role owns at each phase, and the two moments where ownership formally transfers.</p>
       </div>
@@ -751,7 +771,7 @@
   <div class="panel-inner">
     <div class="panel-hdr">
       <div style="flex:1">
-        <div class="panel-num">10</div>
+        <div class="panel-num">11</div>
         <h2 class="panel-title">Early Role Definitions</h2>
         <p class="panel-lede">The structural positions the reorg produces.</p>
       </div>
