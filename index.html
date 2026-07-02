@@ -128,6 +128,34 @@
   .diagram .cap-title{display:block;color:var(--ink);font-weight:600;
     font-size:14px;margin-bottom:4px}
 
+  /* Lifecycle handoffs */
+  .lifecycle{margin:24px 0 8px}
+  .stage{border:1px solid var(--line);border-radius:10px;padding:22px 24px;
+    margin:14px 0;background:var(--bg);position:relative}
+  .stage-hdr{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;
+    flex-wrap:wrap}
+  .stage-when{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;background:var(--accent-soft);
+    padding:4px 10px;border-radius:20px;white-space:nowrap}
+  .stage-owner{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .stage-body{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+  .stage-body ul{margin:8px 0 0;padding-left:20px}
+  .stage-body li{margin:4px 0}
+
+  .handoff{display:flex;align-items:center;gap:14px;padding:14px 20px;
+    margin:8px 0;background:var(--accent);color:#fff;border-radius:8px;
+    font-weight:600;font-size:14px}
+  .handoff .arrow{font-size:20px;line-height:1;opacity:.85}
+  .handoff .label{opacity:.75;text-transform:uppercase;font-size:11px;
+    letter-spacing:.14em;margin-right:auto}
+
+  .horizontal-note{background:var(--panel);border:1px solid var(--line);
+    border-radius:10px;padding:20px 24px;margin-top:24px}
+  .horizontal-note .kicker{font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);font-weight:600;
+    margin-bottom:8px}
+  .horizontal-note p{margin:0;color:var(--ink)}
+
   /* Footer */
   footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--line);
     color:var(--muted);font-size:13px;text-align:center}
@@ -417,9 +445,104 @@
     </div>
   </section>
 
-  <!-- 8. ROLES -->
+  <!-- 8. LIFECYCLE -->
   <section>
-    <h2><span class="num">09</span>Early Role Definitions</h2>
+    <h2><span class="num">09</span>The Client Lifecycle: Handoffs Over Time</h2>
+    <p class="sec-lede">The system in motion. What each role owns at each phase, and the two moments where ownership formally transfers.</p>
+
+    <div class="lifecycle">
+
+      <div class="stage">
+        <div class="stage-hdr">
+          <div class="stage-when">Month 0 · Prospecting</div>
+          <div class="stage-owner">Trevor &amp; Cole</div>
+        </div>
+        <div class="stage-body">
+          T&amp;C run the pitch, close the deal, and set the tone. Nothing structural
+          has changed yet — this is the world we already live in.
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-hdr">
+          <div class="stage-when">Days 0–30 · Onboarding</div>
+          <div class="stage-owner">Trevor &amp; Cole → Department Head</div>
+        </div>
+        <div class="stage-body">
+          T&amp;C onboard the team, introduce everything, sit in on the first meeting
+          <em>alongside the Department Head and that department's Executive Assistant.</em>
+          This is the introduction — and the moment primary ownership is pushed down
+          from T&amp;C to the Department Head.
+          <ul>
+            <li><strong>Department Head</strong> lays out the big picture for the client: roadmap, where we are, how we're getting there.</li>
+            <li><strong>Executive Assistant</strong> makes their first move — collecting credentials, staying on top of what the team needs from the client.</li>
+            <li><strong>Department Head</strong> also selects the Project Manager who will be the client's day-to-day POC.</li>
+            <li>Expectations are set on the first call: cadence, deliverables, and that day-to-day communication will be hosted by the POC — not T&amp;C.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="handoff">
+        <span class="arrow">↓</span>
+        <span class="label">Handoff #1 — End of Month 1</span>
+        <span>Trevor &amp; Cole → Department Head</span>
+      </div>
+
+      <div class="stage">
+        <div class="stage-hdr">
+          <div class="stage-when">Month 2 · Transition</div>
+          <div class="stage-owner">Department Head + POC</div>
+        </div>
+        <div class="stage-body">
+          Month 1 is complete. We're now on the retention side.
+          <ul>
+            <li><strong>Department Head</strong> makes the official announcement to the client: the POC is taking over communication moving forward.</li>
+            <li><strong>Department Head</strong> shifts into the "pivot person" — keeping the team on task, handling budget questions, meeting the client every other meeting, showing up for the big picture.</li>
+            <li><strong>POC</strong> owns fulfillment. The work.</li>
+            <li><strong>Executive Assistant</strong> acts as the department's secretary — deadlines, due dates, where the client thinks we're going, and making sure the PMs are aware of tasks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="handoff">
+        <span class="arrow">↓</span>
+        <span class="label">Handoff #2 — End of Month 2</span>
+        <span>Department Head → POC + Executive Assistant</span>
+      </div>
+
+      <div class="stage">
+        <div class="stage-hdr">
+          <div class="stage-when">Month 3+ · Steady State</div>
+          <div class="stage-owner">POC + Executive Assistant</div>
+        </div>
+        <div class="stage-body">
+          In theory, the system can now run forever.
+          <ul>
+            <li><strong>POC</strong> and <strong>Executive Assistant</strong> own the day-to-day — client retention lives here.</li>
+            <li><strong>Department Head</strong> decides what gets done and divvies out tasks.</li>
+            <li><strong>Executive Assistant</strong> makes sure the Department Head and POC understand and communicate the client's needs.</li>
+            <li><strong>Trevor &amp; Cole</strong> only come in as the <em>ace in the hole</em> — big fixes, unhappy clients, momentum plays.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="horizontal-note">
+      <div class="kicker">A note on structure</div>
+      <p>
+        We are <strong>not losing the horizontal nature of the organization</strong>.
+        These handoffs are about ownership of client communication, not a rigid chain
+        of command. Departments still coordinate laterally. PMs still talk to PMs.
+        Executive Assistants still talk to each other. The org stays flat — the
+        <em>relationship</em> to the client is what gets structured.
+      </p>
+    </div>
+  </section>
+
+  <!-- 9. ROLES -->
+  <section>
+    <h2><span class="num">10</span>Early Role Definitions</h2>
     <p class="sec-lede">The structural positions the reorg produces.</p>
 
     <div class="roles">
@@ -475,7 +598,7 @@
 
   <!-- 9. KEY TERMS -->
   <section>
-    <h2><span class="num">10</span>Key Terms</h2>
+    <h2><span class="num">11</span>Key Terms</h2>
     <dl>
       <dt>Department</dt>
       <dd>An area of products or services that could stand alone as a business. May be assisted
@@ -492,7 +615,7 @@
 
   <!-- 10. REANDRA -->
   <section>
-    <h2><span class="num">11</span>Reandra Meeting Notes</h2>
+    <h2><span class="num">12</span>Reandra Meeting Notes</h2>
     <p class="sec-lede">Reference — the first team 1:1 that informed this plan. She wants everyone interviewed.</p>
 
     <ul>
