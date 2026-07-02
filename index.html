@@ -194,6 +194,30 @@
     color:var(--accent);font-weight:700;margin-bottom:14px}
   .two-col p{margin:0;font-size:17px;line-height:1.65;color:var(--ink)}
 
+  /* Paired pain → benefit layout */
+  .pair-row{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;
+    margin:20px 0;align-items:stretch}
+  .pair-row .arrow-col{display:flex;align-items:center;justify-content:center;
+    color:var(--accent);font-size:24px;font-weight:700;padding:0 4px}
+  .pain-card,.benefit-card{background:var(--bg);border:1px solid var(--line);
+    border-radius:14px;padding:28px 30px}
+  .panel:nth-of-type(even) .pain-card,
+  .panel:nth-of-type(even) .benefit-card{background:var(--bg)}
+  .pain-card{border-left:4px solid #cbd5e1}
+  .benefit-card{border-left:4px solid var(--accent)}
+  .pair-k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:700;margin-bottom:12px}
+  .pain-card .pair-k{color:#94a3b8}
+  .benefit-card .pair-k{color:var(--accent)}
+  .pair-title{font-weight:700;color:var(--ink);font-size:18px;margin-bottom:8px;
+    letter-spacing:-.005em;line-height:1.4}
+  .pair-body{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin:0}
+
+  @media (max-width:960px){
+    .pair-row{grid-template-columns:1fr;gap:8px}
+    .pair-row .arrow-col{transform:rotate(90deg);padding:4px 0}
+  }
+
   /* Footer */
   footer{padding:56px 48px;text-align:center;color:var(--muted);font-size:14px;
     background:var(--ink);color:#94a3b8}
@@ -340,11 +364,12 @@
     <div class="panel-hdr">
       <div style="flex:1">
         <div class="panel-num">03</div>
-        <h2 class="panel-title">Pain Point &amp; The Bridge</h2>
+        <h2 class="panel-title">Pain Points &amp; What Departmentalization Solves</h2>
+        <p class="panel-lede">Every pain has a matching benefit. Departmentalization isn't a reorg for its own sake — it's the answer to specific things that are hurting us right now.</p>
       </div>
     </div>
 
-    <div class="two-col">
+    <div class="two-col" style="margin-bottom:20px">
       <div>
         <div class="k">The pain point</div>
         <p>Trevor and Cole are essential to the company — not just for long-term
@@ -356,6 +381,66 @@
         responsibility distribution across the rest of the team.</p>
       </div>
     </div>
+
+    <h3 style="margin-top:56px">Pain → Benefit</h3>
+    <p style="margin-bottom:8px">Each pain point on the left is answered by a specific benefit of departmentalization on the right.</p>
+
+    <div class="pair-row">
+      <div class="pain-card">
+        <div class="pair-k">Pain</div>
+        <div class="pair-title">Scope creep — every project balloons</div>
+        <p class="pair-body">Clients ask for "one more thing" and we do it because we can. Every project becomes every service. Boundaries dissolve. Estimates stop meaning anything.</p>
+      </div>
+      <div class="arrow-col">→</div>
+      <div class="benefit-card">
+        <div class="pair-k">Benefit</div>
+        <div class="pair-title">Named packages create real edges</div>
+        <p class="pair-body">A client has "Paid Media" and "Social" — that's it. If they want something else, we have to formally bring in another department. The boundary is structural, not a negotiation.</p>
+      </div>
+    </div>
+
+    <div class="pair-row">
+      <div class="pain-card">
+        <div class="pair-k">Pain</div>
+        <div class="pair-title">No one to blame when things go wrong</div>
+        <p class="pair-body">Right now a failure in one area is a company-wide failure. Every client has so much coverage that responsibility gets diffused. There's no fall guy. Everything routes back to Cole and Trevor.</p>
+      </div>
+      <div class="arrow-col">→</div>
+      <div class="benefit-card">
+        <div class="pair-k">Benefit</div>
+        <div class="pair-title">One POC = one owner</div>
+        <p class="pair-body">A single POC per client means there is exactly one person accountable for that relationship. Wins and losses land on a name. Cole and Trevor aren't the default answer to every problem.</p>
+      </div>
+    </div>
+
+    <div class="pair-row">
+      <div class="pain-card">
+        <div class="pair-k">Pain</div>
+        <div class="pair-title">Gaps and overcoverage happen at the same time</div>
+        <p class="pair-body">The blitz approach means three people on one client and zero on another. We're always either drowning or invisible.</p>
+      </div>
+      <div class="arrow-col">→</div>
+      <div class="benefit-card">
+        <div class="pair-k">Benefit</div>
+        <div class="pair-title">Staffing flows through the Department Head</div>
+        <p class="pair-body">The Head assigns people to clients by department, not by whoever's free. Coverage becomes deliberate. Redundancy gets cut, gaps get filled.</p>
+      </div>
+    </div>
+
+    <div class="pair-row">
+      <div class="pain-card">
+        <div class="pair-k">Pain</div>
+        <div class="pair-title">Hiring a new Cole or Trevor is impossible</div>
+        <p class="pair-body">They wear too many hats. Replacing them means replacing four jobs at once. The company can't scale past them.</p>
+      </div>
+      <div class="arrow-col">→</div>
+      <div class="benefit-card">
+        <div class="pair-k">Benefit</div>
+        <div class="pair-title">Hiring a Head of Content is easy</div>
+        <p class="pair-body">Departmental roles are narrow enough to hire against. When the org has five specific seats, hiring becomes a search problem, not a miracle.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
