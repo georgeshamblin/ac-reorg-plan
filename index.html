@@ -98,6 +98,17 @@
     color:var(--accent);font-weight:600;font-size:13px;
     display:flex;align-items:center;justify-content:center}
 
+  /* Structure diagrams */
+  .diagram{margin:24px 0 8px}
+  .diagram figure{margin:0;background:var(--panel);border:1px solid var(--line);
+    border-radius:10px;padding:20px 20px 16px;overflow:hidden}
+  .diagram img{display:block;max-width:100%;height:auto;margin:0 auto;
+    border-radius:6px}
+  .diagram figcaption{margin-top:14px;font-size:13px;color:var(--muted);
+    text-align:center;line-height:1.5}
+  .diagram .cap-title{display:block;color:var(--ink);font-weight:600;
+    font-size:14px;margin-bottom:4px}
+
   /* Footer */
   footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--line);
     color:var(--muted);font-size:13px;text-align:center}
@@ -293,9 +304,59 @@
     </ul>
   </section>
 
-  <!-- 7. ROLES -->
+  <!-- 7. STRUCTURE -->
   <section>
-    <h2><span class="num">07</span>Early Role Definitions</h2>
+    <h2><span class="num">07</span>Structure: Where We Are → Where We're Going</h2>
+    <p class="sec-lede">Three diagrams. The current mess, the current burden made explicit, and the target end state.</p>
+
+    <div class="diagram">
+      <figure>
+        <img src="img/where-we-are.png" alt="Current state — Nativz, RankPrompt, and AC all feeding through Cole and Trevor with crisscrossing lines to Communication and Fulfillment layers">
+        <figcaption>
+          <span class="cap-title">Where We Are</span>
+          Nativz, Rank Prompt, and AC all funnel through Cole and Trevor.
+          Communication and Fulfillment layers are entangled — the crisscross is the problem.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="diagram">
+      <figure>
+        <img src="img/current-burden.png" alt="Current burden — Cole appears as head of Social/Content and Videography, Trevor as head of Paid Media and Web Dev, only Naz has an independent department (RankPrompt)">
+        <figcaption>
+          <span class="cap-title">Where We Are — Named</span>
+          The same picture with names attached. Cole heads Social/Content and Videography.
+          Trevor heads Paid Media and Web Dev. Only RankPrompt (Naz) runs independently.
+          Every red arrow is a handoff that still routes through them.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="diagram">
+      <figure>
+        <img src="img/end-of-year-one.png" alt="Target structure — five departments (Social/Content, Paid Media, Videography, Web Dev, Rank Prompt) each with a named delegate head (Jack, Greg, Jake, Remina, Naz), PMs and EAs beneath, feeding into Client Retention. Cole and Trevor removed as department heads and moved above alongside Sales Team under Client Acquisition.">
+        <figcaption>
+          <span class="cap-title">End of Year One</span>
+          Cole and Trevor move up to Client Acquisition alongside the Sales Team.
+          Five departments run themselves under named heads —
+          <strong>Jack</strong> (Social/Content), <strong>Greg</strong> (Paid Media),
+          <strong>Jake</strong> (Videography), <strong>Remina</strong> (Web Dev),
+          <strong>Naz</strong> (RankPrompt) — each with their own PMs and an EA.
+          Client Retention sits below, fed by every department.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      The transition from the second diagram to the third is the entire job.
+      Every quick win, every audit, every role definition below serves this one
+      structural move.
+    </div>
+  </section>
+
+  <!-- 8. ROLES -->
+  <section>
+    <h2><span class="num">08</span>Early Role Definitions</h2>
     <p class="sec-lede">The structural positions the reorg produces.</p>
 
     <div class="roles">
@@ -344,9 +405,9 @@
     </div>
   </section>
 
-  <!-- 8. KEY TERMS -->
+  <!-- 9. KEY TERMS -->
   <section>
-    <h2><span class="num">08</span>Key Terms</h2>
+    <h2><span class="num">09</span>Key Terms</h2>
     <dl>
       <dt>Department</dt>
       <dd>An area of products or services that could stand alone as a business. May be assisted
@@ -361,9 +422,9 @@
     </dl>
   </section>
 
-  <!-- 9. REANDRA -->
+  <!-- 10. REANDRA -->
   <section>
-    <h2><span class="num">09</span>Reandra Meeting Notes</h2>
+    <h2><span class="num">10</span>Reandra Meeting Notes</h2>
     <p class="sec-lede">Reference — the first team 1:1 that informed this plan. She wants everyone interviewed.</p>
 
     <ul>
